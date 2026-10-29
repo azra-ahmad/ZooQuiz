@@ -1,79 +1,50 @@
-## Cara menjalankan (Windows / PowerShell)
+# ZooQuiz
 
-Link Github: https://github.com/azra-ahmad/ZooQuiz
+An animal-themed quiz web project with a jungle-inspired interface, animated transitions, and a book-style landing experience.
 
-### Prasyarat
+Built with **Next.js, TypeScript, Tailwind CSS, and Framer Motion**.
 
-- **Node.js**: rekomendasi Node 20+ (atau minimal 18.18+)
-- Karena ada `pnpm-lock.yaml`, paling aman pakai **pnpm**
+## Interface highlights
 
----
+- Jungle backdrop with decorative fireflies.
+- Animated transition from the initial skeleton to the main page.
+- A book-spread component as the central landing interaction.
+- Reusable UI components built with shadcn/ui and Radix UI.
 
-### Install dependency
+The initial skeleton is a timed presentation transition, not a live data-loading indicator.
 
-Di root project
+## Run locally
 
-```bash
-corepack enable
+Use a Node.js version supported by the Next.js 16 release pinned in `package.json`. This repository includes `pnpm-lock.yaml`, so use pnpm to keep dependency resolution consistent.
+
+```sh
+git clone https://github.com/azra-ahmad/ZooQuiz.git
+cd ZooQuiz
 pnpm install
-```
-
-> Kalau `corepack` tidak tersedia, install pnpm manual:
-> ```bash
-> npm i -g pnpm
-> pnpm install
-> ```
-
----
-
-### Run mode development
-
-```bash
 pnpm dev
 ```
 
-Lalu buka: [http://localhost:3000](http://localhost:3000)
+Open [localhost:3000](http://localhost:3000).
 
----
+## Available commands
 
-### Build & run production
-
-```bash
-pnpm build
-pnpm start
-```
-
----
-
-### Lint
-
-```bash
-pnpm lint
-```
-
----
-
-## Tech stack
-
-| Kategori | Detail |
+| Command | Purpose |
 |---|---|
-| **Framework** | Next.js (`next dev` / `build` / `start` via `package.json`) |
-| **UI / Styling** | Tailwind CSS + shadcn/ui (lihat `components.json` dan `components/ui/*`) |
-| **Animasi** | Framer Motion |
-| **Icon** | `lucide-react` |
+| `pnpm dev` | Start the development server |
+| `pnpm build` | Create a production build |
+| `pnpm start` | Serve the production build |
+| `pnpm lint` | Run the configured ESLint command |
 
----
+## Project map
 
-## Struktur halaman
+| Path | Purpose |
+|---|---|
+| `app/page.tsx` | Landing page and initial transition |
+| `app/layout.tsx` | Shared layout and metadata |
+| `components/zooquiz/` | Quiz-themed interface components |
+| `components/ui/` | Reusable UI primitives |
+| `public/` | Images and other static assets |
 
-### `app/page.tsx` — Entry point
+## Technologies
 
-- Render landing page bernuansa **"jungle"**
-- Ada state loading untuk menampilkan **skeleton** dulu ~1.4s, lalu konten utama
-- Konten utama: **Hero** + **2 kartu mode quiz**
-
-### `app/layout.tsx` — Layout global
-
-- Set font Google: **Fredoka**, **Nunito**
-- Set metadata
-- Inject **Vercel Analytics** saat production
+Next.js · React · TypeScript · Tailwind CSS · Framer Motion · shadcn/ui · Radix UI · Lucide
